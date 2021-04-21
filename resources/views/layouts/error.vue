@@ -1,24 +1,22 @@
 <template>
-	<div>
-		{{ $props.error.statusCode }} - {{ $props.error.message }}
+	<div class="x-container">
+		<p>{{ $props.error.statusCode }} - {{ $props.error.message }}</p>
 	</div>
 </template>
 
 <script>
-export default {
-	layout: 'simple',
-
-	props: {
-		error: {
-			type: Object,
-			default: null,
+	export default {
+		props: {
+			error: {
+				type: Object,
+				default: null,
+			},
 		},
-	},
 
-	head () {
-		return {
-			title: this.$props.error.statusCode,
-		};
-	},
-};
+		head() {
+			return {
+				title: this.$props.error.statusCode,
+			};
+		},
+	};
 </script>

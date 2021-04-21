@@ -1,29 +1,32 @@
 <template>
-	<header class="relative z-site-header text-center">
-		<div>
-			<h1>Site header</h1>
-		</div>
+	<header class="x-container">
+		<h1 class="font-system">Site header</h1>
 
-		<div>
-			<nuxt-link
-				v-for="(link, index) in $props.links"
-				:key="index"
-				:to="link.url"
-				v-html="link.title"
-			/>
-		</div>
+		<nav>
+			<ul class="flex space-x-4">
+				<li
+					v-for="(link, index) in $props.links"
+					:key="index"
+				>
+					<nuxt-link
+						:to="link.url"
+						v-text="link.title"
+					/>
+				</li>
+			</ul>
+		</nav>
 	</header>
 </template>
 
 <script>
-export default {
-	inheritAttrs: false,
+	export default {
+		inheritAttrs: false,
 
-	props: {
-		links: {
-			type: Array,
-			default: null,
+		props: {
+			links: {
+				type: Array,
+				default: null,
+			},
 		},
-	},
-};
+	};
 </script>
